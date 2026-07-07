@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Renovations | Toronto Kitchen &amp; Bathroom Renovations</title>
+<meta name="description" content="Elite Renovations — premium kitchen and bathroom renovations across the Greater Toronto Area. 250+ projects, 12 years of craftsmanship, 4.9 star rating.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2C5F2E;
+    --green-dark:#1e421f;
+    --green-light:#e8f0e8;
+    --ink:#1a1a1a;
+    --gray:#6b6b6b;
+    --line:#e7e5e0;
+    --paper:#ffffff;
+    --cream:#faf9f6;
+    --shadow: 0 20px 50px rgba(0,0,0,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  section{position:relative;}
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,.8,.3,1), transform .8s cubic-bezier(.16,.8,.3,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal-stagger.visible .stagger-item{transition-delay:calc(var(--i) * 0.1s);}
+  .stagger-item{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,.8,.3,1), transform .7s cubic-bezier(.16,.8,.3,1);}
+  .reveal-stagger.visible .stagger-item{opacity:1;transform:translateY(0);}
+
+  /* ---------- Navbar ---------- */
+  .navbar{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;
+    transition:all .35s ease;
+  }
+  .navbar.scrolled{
+    border-bottom:1px solid var(--line);
+    box-shadow:0 4px 20px rgba(0,0,0,0.04);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1200px;margin:0 auto;
+  }
+  .logo{
+    font-family:'Playfair Display',serif;font-weight:700;font-size:1.4rem;
+    letter-spacing:.5px;display:flex;align-items:center;gap:8px;
+  }
+  .logo span{color:var(--green);}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{
+    font-size:.95rem;font-weight:500;color:var(--ink);position:relative;padding:4px 0;
+    transition:color .3s ease;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--green);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover{color:var(--green);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--green);color:#fff !important;padding:11px 24px;border-radius:100px;
+    font-weight:600;font-size:.9rem;transition:all .3s ease;
+  }
+  .nav-cta::after{display:none;}
+  .nav-cta:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 10px 25px rgba(44,95,46,0.35);color:#fff !important;}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:1100;}
+  .nav-toggle span{width:24px;height:2px;background:var(--ink);transition:all .3s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding:140px 0 80px;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(44,95,46,0.07), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(44,95,46,0.06), transparent 40%),
+      var(--cream);
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(44,95,46,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(44,95,46,.035) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 20%, black, transparent);
+  }
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    padding:8px 18px;border-radius:100px;font-size:.85rem;font-weight:600;color:var(--green);
+    box-shadow:0 4px 15px rgba(0,0,0,0.04);
+    animation:fadeInUp .8s ease .1s both;
+  }
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  .hero h1{
+    font-size:clamp(2.4rem, 5.2vw, 4.2rem);line-height:1.08;margin:24px 0 22px;font-weight:700;
+    letter-spacing:-1px;
+  }
+  .hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordUp .8s cubic-bezier(.16,.8,.3,1) forwards;}
+  .hero h1 .accent{color:var(--green);font-style:italic;font-weight:600;}
+  @keyframes wordUp{to{opacity:1;transform:translateY(0);}}
+  .hero p.lead{
+    font-size:1.15rem;color:var(--gray);max-width:520px;line-height:1.7;margin-bottom:36px;
+    animation:fadeInUp .8s ease .5s both;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;animation:fadeInUp .8s ease .65s both;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;
+    font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:all .35s cubic-bezier(.16,.8,.3,1);
+    font-family:'Inter',sans-serif;
+  }
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 30px rgba(44,95,46,.3);}
+  .btn-primary:hover{background:var(--green-dark);transform:translateY(-3px);box-shadow:0 15px 35px rgba(44,95,46,.4);}
+  .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .btn-outline:hover{border-color:var(--green);color:var(--green);transform:translateY(-3px);}
+
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+  .hero-stats{
+    display:flex;gap:40px;margin-top:60px;flex-wrap:wrap;
+    animation:fadeInUp .8s ease .8s both;
+  }
+  .stat-num{
+    font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:var(--green);
+    display:flex;align-items:baseline;gap:2px;
+  }
+  .stat-label{font-size:.85rem;color:var(--gray);margin-top:4px;font-weight:500;}
+
+  .hero-visual{position:relative;animation:fadeInUp 1s ease .4s both;}
+  .hero-visual-main{
+    border-radius:24px;overflow:hidden;box-shadow:var(--shadow);position:relative;
+    aspect-ratio:4/5;
+  }
+  .hero-visual-main img{width:100%;height:100%;object-fit:cover;}
+  .float-card{
+    position:absolute;background:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    display:flex;align-items:center;gap:12px;animation:floaty 5s ease-in-out infinite;
+  }
+  .float-card.fc1{top:8%;left:-8%;animation-delay:0s;}
+  .float-card.fc2{bottom:10%;right:-10%;animation-delay:1.5s;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+  .fc-icon{width:42px;height:42px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:1.2rem;flex-shrink:0;}
+  .fc-title{font-weight:700;font-size:.95rem;}
+  .fc-sub{font-size:.78rem;color:var(--gray);}
+
+  /* ---------- Section headers ---------- */
+  .eyebrow{
+    color:var(--green);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.8rem;
+    display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:16px;
+  }
+  .eyebrow::before,.eyebrow::after{content:'';width:30px;height:1.5px;background:var(--green);opacity:.5;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 64px;}
+  .section-head h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:700;letter-spacing:-.5px;margin-bottom:16px;}
+  .section-head p{color:var(--gray);font-size:1.05rem;line-height:1.7;}
+
+  section.pad{padding:110px 0;}
+  .bg-cream{background:var(--cream);}
+
+  /* ---------- Services ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px 32px;
+    transition:all .4s cubic-bezier(.16,.8,.3,1);position:relative;overflow:hidden;
+  }
+  .service-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--green);
+    transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,.8,.3,1);
+  }
+  .service-card:hover{transform:translateY(-10px);box-shadow:0 25px 50px rgba(0,0,0,0.1);border-color:transparent;}
+  .service-card:hover::before{transform:scaleX(1);}
+  .service-icon{
+    width:64px;height:64px;border-radius:16px;background:var(--green-light);color:var(--green);
+    display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:24px;
+    transition:all .4s ease;
+  }
+  .service-card:hover .service-icon{background:var(--green);color:#fff;transform:rotate(-6deg) scale(1.05);}
+  .service-card h3{font-size:1.3rem;margin-bottom:12px;font-weight:600;}
+  .service-card p{color:var(--gray);font-size:.95rem;line-height:1.65;margin-bottom:20px;}
+  .service-link{font-weight:600;font-size:.9rem;color:var(--green);display:inline-flex;align-items:center;gap:6px;}
+  .service-link .arrow{transition:transform .3s ease;}
+  .service-card:hover .service-link .arrow{transform:translateX(5px);}
+
+  /* ---------- Before / After Slider ---------- */
+  .ba-wrap{max-width:900px;margin:0 auto;}
+  .ba-slider{
+    position:relative;width:100%;aspect-ratio:16/10;border-radius:24px;overflow:hidden;
+    box-shadow:var(--shadow);user-select:none;cursor:ew-resize;
+  }
+  .ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .ba-before{z-index:1;}
+  .ba-after-wrap{position:absolute;inset:0;z-index:2;overflow:hidden;width:50%;}
+  .ba-after-wrap img{width:900px;max-width:none;height:100%;position:absolute;top:0;left:0;}
+  .ba-label{
+    position:absolute;top:20px;padding:8px 18px;border-radius:100px;background:rgba(0,0,0,0.55);
+    color:#fff;font-size:.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;z-index:3;
+  }
+  .ba-label.before{left:20px;}
+  .ba-label.after{right:20px;}
+  .ba-handle{
+    position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;z-index:4;
+    transform:translateX(-50%);box-shadow:0 0 0 100vmax rgba(255,255,255,0) ;
+    cursor:ew-resize;
+  }
+  .ba-handle-btn{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;
+    background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);color:var(--green);font-size:1.1rem;gap:2px;
+  }
+  .ba-caption{text-align:center;margin-top:24px;color:var(--gray);font-size:.95rem;}
+  .ba-caption strong{color:var(--ink);}
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:18px;
+  }
+  .gallery-item{position:relative;border-radius:18px;overflow:hidden;cursor:pointer;}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .gallery-item:nth-child(4){grid-column:span 2;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,.8,.3,1);}
+  .gallery-item:hover img{transform:scale(1.08);}
+  .gallery-overlay{
+    position:absolute;inset:0;background:linear-gradient(0deg, rgba(15,30,15,0.85) 0%, rgba(15,30,15,0.1) 55%, transparent 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:22px;
+    opacity:0;transition:opacity .4s ease;
+  }
+  .gallery-item:hover .gallery-overlay{opacity:1;}
+  .gallery-overlay .tag{
+    color:#fff;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    opacity:.85;margin-bottom:6px;transform:translateY(10px);transition:transform .4s ease .05s;
+  }
+  .gallery-overlay .title{color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;
+    transform:translateY(10px);transition:transform .4s ease .1s;}
+  .gallery-item:hover .tag, .gallery-item:hover .title{transform:translateY(0);}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;}
+  .about-img-wrap{position:relative;}
+  .about-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3/4;}
+  .about-img img{width:100%;height:100%;object-fit:cover;}
+  .about-badge{
+    position:absolute;bottom:-28px;left:-28px;background:var(--green);color:#fff;padding:24px 28px;
+    border-radius:18px;box-shadow:0 20px 40px rgba(44,95,46,.35);
+  }
+  .about-badge .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;}
+  .about-badge .txt{font-size:.8rem;opacity:.9;}
+  .about h2{font-size:clamp(2rem,3.4vw,2.6rem);margin-bottom:8px;}
+  .about .role{color:var(--green);font-weight:600;margin-bottom:22px;font-size:.95rem;letter-spacing:.5px;text-transform:uppercase;}
+  .about p{color:var(--gray);line-height:1.8;margin-bottom:18px;font-size:1.02rem;}
+  .about-signature{font-family:'Playfair Display',serif;font-style:italic;font-size:1.6rem;margin-top:28px;color:var(--green);}
+  .about-list{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .about-list li{display:flex;align-items:center;gap:10px;font-size:.92rem;font-weight:500;}
+  .about-list .check{
+    width:22px;height:22px;border-radius:50%;background:var(--green-light);color:var(--green);
+    display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;
+  }
+
+  /* ---------- Reviews ---------- */
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .review-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;
+    transition:all .4s ease;
+  }
+  .review-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,0.08);}
+  .stars{color:#e0a324;font-size:1rem;letter-spacing:2px;margin-bottom:18px;}
+  .review-card p.quote{color:var(--ink);line-height:1.75;font-size:1rem;margin-bottom:24px;}
+  .review-person{display:flex;align-items:center;gap:14px;}
+  .review-avatar{
+    width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif;
+    font-size:1.05rem;flex-shrink:0;
+  }
+  .review-name{font-weight:700;font-size:.95rem;}
+  .review-meta{font-size:.82rem;color:var(--gray);}
+
+  /* ---------- Booking ---------- */
+  .booking-wrap{max-width:760px;margin:0 auto;background:#fff;border-radius:28px;box-shadow:var(--shadow);
+    border:1px solid var(--line);overflow:hidden;}
+  .booking-steps-head{display:flex;background:var(--cream);padding:28px 40px;gap:0;position:relative;}
+  .bstep{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:2;}
+  .bstep-circle{
+    width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:var(--gray);
+    transition:all .4s ease;
+  }
+  .bstep.active .bstep-circle{background:var(--green);border-color:var(--green);color:#fff;}
+  .bstep.done .bstep-circle{background:var(--green);border-color:var(--green);color:#fff;}
+  .bstep-label{font-size:.78rem;font-weight:600;color:var(--gray);text-align:center;}
+  .bstep.active .bstep-label{color:var(--ink);}
+  .bstep-line{
+    position:absolute;top:47px;left:0;right:0;height:2px;background:var(--line);z-index:1;margin:0 20%;
+  }
+  .bstep-line-fill{height:100%;background:var(--green);width:0%;transition:width .5s cubic-bezier(.16,.8,.3,1);}
+
+  .booking-body{padding:44px 40px;}
+  .form-step{display:none;animation:fadeInUp .5s ease both;}
+  .form-step.active{display:block;}
+  .form-step h3{font-size:1.5rem;margin-bottom:6px;}
+  .form-step .step-sub{color:var(--gray);font-size:.95rem;margin-bottom:32px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .form-group{display:flex;flex-direction:column;gap:8px;}
+  .form-group.full{grid-column:1/-1;}
+  .form-group label{font-size:.85rem;font-weight:600;color:var(--ink);}
+  .form-group input,.form-group select,.form-group textarea{
+    padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-family:'Inter',sans-serif;
+    font-size:.95rem;transition:all .3s ease;background:#fdfdfc;
+  }
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+    outline:none;border-color:var(--green);background:#fff;box-shadow:0 0 0 4px rgba(44,95,46,0.1);
+  }
+  .form-group textarea{resize:vertical;min-height:100px;}
+  .budget-options,.timeline-options,.slot-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .pill-option{
+    border:1.5px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;
+    font-size:.87rem;font-weight:600;color:var(--gray);transition:all .25s ease;
+  }
+  .pill-option:hover{border-color:var(--green);color:var(--green);}
+  .pill-option.selected{background:var(--green);border-color:var(--green);color:#fff;}
+  .form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:36px;gap:16px;}
+  .form-nav .btn{padding:14px 30px;}
+  .btn-ghost{background:transparent;color:var(--gray);border:1.5px solid var(--line);}
+  .btn-ghost:hover{color:var(--ink);border-color:var(--ink);}
+  .error-msg{color:#b3261e;font-size:.8rem;margin-top:4px;display:none;}
+
+  .success-screen{display:none;text-align:center;padding:20px 10px 10px;}
+  .success-screen.active{display:block;animation:fadeInUp .6s ease both;}
+  .success-icon{
+    width:88px;height:88px;border-radius:50%;background:var(--green-light);color:var(--green);
+    display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin:0 auto 26px;
+    animation:popIn .5s cubic-bezier(.34,1.56,.64,1) .2s both;
+  }
+  @keyframes popIn{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .success-screen h3{font-size:1.7rem;margin-bottom:12px;}
+  .success-screen p{color:var(--gray);line-height:1.7;max-width:420px;margin:0 auto 28px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:#16241a;color:#fff;padding:80px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;margin-bottom:16px;}
+  .footer-logo span{color:#7ab97c;}
+  .footer-col p{color:rgba(255,255,255,0.6);font-size:.92rem;line-height:1.7;margin-bottom:20px;}
+  .footer-social{display:flex;gap:12px;}
+  .footer-social a{
+    width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;
+    align-items:center;justify-content:center;transition:all .3s ease;font-size:.9rem;
+  }
+  .footer-social a:hover{background:#2C5F2E;transform:translateY(-3px);}
+  .footer-col h4{font-size:1rem;margin-bottom:22px;font-weight:600;}
+  .footer-col ul li{margin-bottom:13px;}
+  .footer-col ul li a{color:rgba(255,255,255,0.6);font-size:.92rem;transition:color .25s ease;}
+  .footer-col ul li a:hover{color:#7ab97c;}
+  .footer-contact li{display:flex;gap:12px;color:rgba(255,255,255,0.6);font-size:.9rem;margin-bottom:16px;align-items:flex-start;}
+  .footer-contact .ic{color:#7ab97c;flex-shrink:0;margin-top:2px;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding:26px 0;
+    color:rgba(255,255,255,0.45);font-size:.85rem;flex-wrap:wrap;gap:10px;
+  }
+  .footer-bottom a{color:rgba(255,255,255,0.45);}
+  .footer-bottom a:hover{color:#fff;}
+
+  /* ---------- Back to top ---------- */
+  .to-top{
+    position:fixed;bottom:28px;right:28px;width:50px;height:50px;border-radius:50%;background:var(--green);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;
+    box-shadow:0 10px 25px rgba(44,95,46,.4);opacity:0;pointer-events:none;transition:all .35s ease;z-index:900;border:none;
+  }
+  .to-top.show{opacity:1;pointer-events:auto;}
+  .to-top:hover{transform:translateY(-4px);background:var(--green-dark);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:420px;margin:0 auto;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;gap:50px;}
+    .reviews-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px;}
+    .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+  }
+  @media (max-width:768px){
+    .nav-links{
+      position:fixed;top:0;right:0;height:100vh;width:min(320px,80vw);background:#fff;flex-direction:column;
+      justify-content:center;align-items:flex-start;padding:40px;gap:28px;transform:translateX(100%);
+      transition:transform .4s cubic-bezier(.16,.8,.3,1);box-shadow:-10px 0 40px rgba(0,0,0,0.1);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:flex;}
+    .nav-cta{width:100%;justify-content:center;}
+    .hero-stats{gap:26px;}
+    .stat-num{font-size:2rem;}
+    .float-card{display:none;}
+    .services-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .budget-options,.timeline-options,.slot-options{grid-template-columns:1fr 1fr;}
+    .booking-steps-head{padding:22px 16px;}
+    .bstep-label{display:none;}
+    .booking-body{padding:32px 22px;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+    .about-badge{left:16px;bottom:-20px;padding:16px 20px;}
+  }
+  @media (max-width:520px){
+    .gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px;}
+    .gallery-item:nth-child(1){grid-column:span 1;}
+    .gallery-item:nth-child(4){grid-column:span 1;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">Elite <span>Renovations</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#booking" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> Toronto's Trusted Renovation Studio</div>
+      <h1>
+        <span class="word" style="animation-delay:.15s">Kitchens</span> <span class="word" style="animation-delay:.25s">&amp;</span>
+        <span class="word" style="animation-delay:.35s">Bathrooms,</span><br>
+        <span class="word accent" style="animation-delay:.5s">Reimagined</span>
+        <span class="word" style="animation-delay:.6s">Beautifully.</span>
+      </h1>
+      <p class="lead">We design and build premium kitchen and bathroom renovations across the Greater Toronto Area — where craftsmanship meets timeless design, from first sketch to final polish.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary">Book Free Consultation</a>
+        <a href="#gallery" class="btn btn-outline">View Our Work</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num" data-count="250" data-suffix="+">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div>
+          <div class="stat-num" data-count="12" data-suffix=" yrs">0</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div>
+          <div class="stat-num" data-count="4.9" data-decimal="1" data-suffix="★">0</div>
+          <div class="stat-label">Average Client Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-main">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Modern renovated kitchen with dark green cabinetry">
+      </div>
+      <div class="float-card fc1">
+        <div class="fc-icon">✓</div>
+        <div><div class="fc-title">Project Complete</div><div class="fc-sub">Bridle Path, Toronto</div></div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-icon">★</div>
+        <div><div class="fc-title">4.9 / 5.0</div><div class="fc-sub">120+ Google Reviews</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="pad" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Do</div>
+      <h2>Renovation Services Built Around You</h2>
+      <p>From full gut renovations to focused upgrades, our team handles every detail with precision, transparency, and craftsmanship.</p>
+    </div>
+    <div class="services-grid reveal-stagger reveal">
+      <div class="service-card stagger-item" style="--i:0">
+        <div class="service-icon">🍽</div>
+        <h3>Kitchen Renovations</h3>
+        <p>Custom cabinetry, islands, and layouts designed for how you actually cook and live.</p>
+        <a href="#booking" class="service-link">Learn more <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card stagger-item" style="--i:1">
+        <div class="service-icon">🛁</div>
+        <h3>Bathroom Renovations</h3>
+        <p>Spa-inspired bathrooms with premium tile, glass, and fixtures that stand the test of time.</p>
+        <a href="#booking" class="service-link">Learn more <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card stagger-item" style="--i:2">
+        <div class="service-icon">🏠</div>
+        <h3>Full Home Remodeling</h3>
+        <p>End-to-end renovation management for whole-home transformations, on time and on budget.</p>
+        <a href="#booking" class="service-link">Learn more <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card stagger-item" style="--i:3">
+        <div class="service-icon">📐</div>
+        <h3>Design &amp; Planning</h3>
+        <p>3D renderings and material selection with our in-house designers before a single wall comes down.</p>
+        <a href="#booking" class="service-link">Learn more <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card stagger-item" style="--i:4">
+        <div class="service-icon">🔨</div>
+        <h3>Custom Cabinetry</h3>
+        <p>Locally built, made-to-measure cabinetry and millwork tailored to your space and style.</p>
+        <a href="#booking" class="service-link">Learn more <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card stagger-item" style="--i:5">
+        <div class="service-icon">💧</div>
+        <h3>Plumbing &amp; Electrical</h3>
+        <p>Licensed trades handling every pipe and wire, fully permitted and up to Ontario code.</p>
+        <a href="#booking" class="service-link">Learn more <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEFORE / AFTER ================= -->
+<section class="pad bg-cream">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Transformation</div>
+      <h2>Before &amp; After</h2>
+      <p>Drag the slider to see the difference craftsmanship makes.</p>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba-slider" id="baSlider">
+        <img class="ba-before" src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?q=80&w=1200&auto=format&fit=crop" alt="Outdated kitchen before renovation">
+        <div class="ba-after-wrap" id="baAfterWrap">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="Modern kitchen after renovation">
+        </div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-handle-btn">↔</div>
+        </div>
+      </div>
+      <p class="ba-caption reveal"><strong>Yorkville Kitchen Remodel</strong> — full gut renovation, custom green cabinetry &amp; quartz countertops.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="pad" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Portfolio</div>
+      <h2>Recent Projects</h2>
+      <p>A look at some of the kitchens and bathrooms we've recently brought to life across the GTA.</p>
+    </div>
+    <div class="gallery-grid reveal-stagger reveal">
+      <div class="gallery-item stagger-item" style="--i:0">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=900&auto=format&fit=crop" alt="Modern kitchen renovation">
+        <div class="gallery-overlay"><span class="tag">Kitchen · Rosedale</span><span class="title">Modern Farmhouse Kitchen</span></div>
+      </div>
+      <div class="gallery-item stagger-item" style="--i:1">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop" alt="Luxury bathroom renovation">
+        <div class="gallery-overlay"><span class="tag">Bathroom · Leslieville</span><span class="title">Spa-Inspired Ensuite</span></div>
+      </div>
+      <div class="gallery-item stagger-item" style="--i:2">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=800&auto=format&fit=crop" alt="Kitchen island renovation">
+        <div class="gallery-overlay"><span class="tag">Kitchen · The Beaches</span><span class="title">Waterfall Island Kitchen</span></div>
+      </div>
+      <div class="gallery-item stagger-item" style="--i:3">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop" alt="Modern bathroom vanity">
+        <div class="gallery-overlay"><span class="tag">Bathroom · North York</span><span class="title">Floating Double Vanity</span></div>
+      </div>
+      <div class="gallery-item stagger-item" style="--i:4">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop" alt="Bright open concept kitchen">
+        <div class="gallery-overlay"><span class="tag">Kitchen · Etobicoke</span><span class="title">Bright Open-Concept Kitchen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="pad bg-cream" id="about">
+  <div class="container about-grid">
+    <div class="about-img-wrap reveal">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Marco D'Angelo, owner of Elite Renovations">
+      </div>
+      <div class="about-badge">
+        <div class="num">12+</div>
+        <div class="txt">Years in Business</div>
+      </div>
+    </div>
+    <div class="about reveal">
+      <div class="role">Meet the Owner</div>
+      <h2>Marco D'Angelo</h2>
+      <p>Marco founded Elite Renovations over 12 years ago with a simple belief: renovations should be stress-free and the results should last a lifetime. Born and raised in Toronto, Marco trained as a carpenter before building Elite Renovations into one of the GTA's most trusted kitchen and bathroom renovation studios.</p>
+      <p>Today, Marco personally oversees every project's design phase, ensuring each home gets the same hands-on attention his very first client received — from a downtown condo refresh to full custom builds in Forest Hill.</p>
+      <ul class="about-list">
+        <li><span class="check">✓</span> Licensed &amp; Fully Insured</li>
+        <li><span class="check">✓</span> BBB A+ Accredited</li>
+        <li><span class="check">✓</span> Fixed-Price Quotes</li>
+        <li><span class="check">✓</span> 5-Year Workmanship Warranty</li>
+      </ul>
+      <div class="about-signature">— Marco D'Angelo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="pad" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Client Stories</div>
+      <h2>What Our Clients Say</h2>
+      <p>We're proud of the relationships we build with every homeowner we work with.</p>
+    </div>
+    <div class="reviews-grid reveal-stagger reveal">
+      <div class="review-card stagger-item" style="--i:0">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Marco and his team completely transformed our outdated kitchen into something out of a magazine. On time, on budget, and the communication was fantastic throughout."</p>
+        <div class="review-person">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Sarah Thompson</div><div class="review-meta">Kitchen Renovation · Etobicoke</div></div>
+        </div>
+      </div>
+      <div class="review-card stagger-item" style="--i:1">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We interviewed five contractors before choosing Elite Renovations, and it was the right call. The attention to detail in our bathroom remodel exceeded expectations."</p>
+        <div class="review-person">
+          <div class="review-avatar">J</div>
+          <div><div class="review-name">James Okafor</div><div class="review-meta">Bathroom Renovation · North York</div></div>
+        </div>
+      </div>
+      <div class="review-card stagger-item" style="--i:2">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Professional from start to finish. Marco walked us through every decision and the crew treated our home with real respect. Highly recommend to anyone in the GTA."</p>
+        <div class="review-person">
+          <div class="review-avatar">P</div>
+          <div><div class="review-name">Priya Nair</div><div class="review-meta">Full Home Remodel · Mississauga</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section class="pad bg-cream" id="booking">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Get Started</div>
+      <h2>Book Your Free Consultation</h2>
+      <p>Tell us about your project and we'll get back to you within one business day.</p>
+    </div>
+
+    <div class="booking-wrap reveal">
+      <div class="booking-steps-head">
+        <div class="bstep-line"><div class="bstep-line-fill" id="stepLineFill"></div></div>
+        <div class="bstep active" data-step="1"><div class="bstep-circle">1</div><div class="bstep-label">Your Info</div></div>
+        <div class="bstep" data-step="2"><div class="bstep-circle">2</div><div class="bstep-label">Project</div></div>
+        <div class="bstep" data-step="3"><div class="bstep-circle">3</div><div class="bstep-label">Schedule</div></div>
+      </div>
+
+      <div class="booking-body">
+        <form id="bookingForm" novalidate>
+          <!-- STEP 1 -->
+          <div class="form-step active" data-form-step="1">
+            <h3>Let's start with you</h3>
+            <p class="step-sub">Basic contact information so we know how to reach you.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Jane Smith" required>
+                <span class="error-msg">Please enter your full name.</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+                <span class="error-msg">Please enter a valid email.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(416) 555-0192" required>
+                <span class="error-msg">Please enter a valid phone number.</span>
+              </div>
+              <div class="form-group">
+                <label for="address">Property Address *</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St, Toronto" required>
+                <span class="error-msg">Please enter your address.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="form-step" data-form-step="2">
+            <h3>Tell us about your project</h3>
+            <p class="step-sub">Help us understand the scope so we can prepare accurately.</p>
+            <div class="form-group full" style="margin-bottom:20px;">
+              <label for="serviceType">Service Type *</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select a service...</option>
+                <option value="Kitchen Renovation">Kitchen Renovation</option>
+                <option value="Bathroom Renovation">Bathroom Renovation</option>
+                <option value="Full Home Remodel">Full Home Remodel</option>
+                <option value="Custom Cabinetry">Custom Cabinetry</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="error-msg">Please select a service type.</span>
+            </div>
+            <div class="form-group full" style="margin-bottom:12px;">
+              <label>Estimated Budget *</label>
+              <div class="budget-options" id="budgetOptions">
+                <div class="pill-option" data-value="Under $25k">Under $25k</div>
+                <div class="pill-option" data-value="$25k - $50k">$25k – $50k</div>
+                <div class="pill-option" data-value="$50k - $100k">$50k – $100k</div>
+                <div class="pill-option" data-value="$100k+">$100k+</div>
+                <div class="pill-option" data-value="Not sure">Not sure</div>
+              </div>
+              <input type="hidden" id="budget" name="budget" required>
+              <span class="error-msg" id="budgetError">Please choose a budget range.</span>
+            </div>
+            <div class="form-group full" style="margin:20px 0 12px;">
+              <label>Preferred Timeline *</label>
+              <div class="timeline-options" id="timelineOptions">
+                <div class="pill-option" data-value="ASAP">ASAP</div>
+                <div class="pill-option" data-value="1-3 months">1–3 months</div>
+                <div class="pill-option" data-value="3-6 months">3–6 months</div>
+                <div class="pill-option" data-value="Flexible">Flexible</div>
+              </div>
+              <input type="hidden" id="timeline" name="timeline" required>
+              <span class="error-msg" id="timelineError">Please choose a timeline.</span>
+            </div>
+            <div class="form-group full" style="margin-top:20px;">
+              <label for="description">Project Description</label>
+              <textarea id="description" name="description" placeholder="Tell us a bit about your space and what you're hoping to achieve..."></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="form-step" data-form-step="3">
+            <h3>Choose your schedule</h3>
+            <p class="step-sub">Pick a date and time that works best for your free consultation.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date *</label>
+                <input type="date" id="preferredDate" name="preferredDate" required>
+                <span class="error-msg">Please choose a preferred date.</span>
+              </div>
+              <div class="form-group">
+                <label for="backupDate">Backup Date</label>
+                <input type="date" id="backupDate" name="backupDate">
+              </div>
+            </div>
+            <div class="form-group full" style="margin-top:8px;">
+              <label>Preferred Time Slot *</label>
+              <div class="slot-options" id="slotOptions">
+                <div class="pill-option" data-value="Morning (9am-12pm)">Morning</div>
+                <div class="pill-option" data-value="Afternoon (12pm-4pm)">Afternoon</div>
+                <div class="pill-option" data-value="Evening (4pm-7pm)">Evening</div>
+              </div>
+              <input type="hidden" id="timeSlot" name="timeSlot" required>
+              <span class="error-msg" id="slotError">Please choose a time slot.</span>
+            </div>
+          </div>
+
+          <div class="form-nav" id="formNav">
+            <button type="button" class="btn btn-ghost" id="prevBtn" style="visibility:hidden;">Back</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Continue</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">Submit Request</button>
+          </div>
+        </form>
+
+        <!-- SUCCESS SCREEN -->
+        <div class="success-screen" id="successScreen">
+          <div class="success-icon">✓</div>
+          <h3>Request Received!</h3>
+          <p>Thank you for reaching out to Elite Renovations. Marco and the team will review your project details and contact you within one business day to confirm your consultation.</p>
+          <a href="#home" class="btn btn-primary" id="successHomeBtn">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Elite <span>Renovations</span></div>
+        <p>Premium kitchen and bathroom renovations across Toronto and the Greater Toronto Area. Licensed, insured, and locally owned.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Houzz">HZ</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Kitchen Renovations</a></li>
+          <li><a href="#services">Bathroom Renovations</a></li>
+          <li><a href="#services">Full Home Remodeling</a></li>
+          <li><a href="#booking">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span class="ic">📍</span> Toronto, Ontario — Serving the GTA</li>
+          <li><span class="ic">📞</span> (416) 555-0192</li>
+          <li><span class="ic">✉</span> hello@eliterenovations.ca</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Elite Renovations. All rights reserved.</div>
+      <div><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Navbar scroll state ---------- */
+  const navbar = document.getElementById('navbar');
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 20);
+    toTop.classList.toggle('show', y > 500);
+  });
+
+  /* ---------- Mobile nav toggle ---------- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  /* ---------- Counting stat animation ---------- */
+  const statEls = document.querySelectorAll('.stat-num');
+  let statsAnimated = false;
+  function animateStats(){
+    if(statsAnimated) return;
+    statsAnimated = true;
+    statEls.forEach(function(el){
+      const target = parseFloat(el.getAttribute('data-count'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+      const duration = 1800;
+      const startTime = performance.now();
+      function tick(now){
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = target * eased;
+        el.textContent = current.toFixed(decimals) + suffix;
+        if(progress < 1){
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target.toFixed(decimals) + suffix;
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+  const heroStats = document.querySelector('.hero-stats');
+  if(heroStats){
+    const statsIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          animateStats();
+          statsIo.disconnect();
+        }
+      });
+    }, {threshold:0.4});
+    statsIo.observe(heroStats);
+  }
+
+  /* ---------- Before / After slider ---------- */
+  const baSlider = document.getElementById('baSlider');
+  const baAfterWrap = document.getElementById('baAfterWrap');
+  const baHandle = document.getElementById('baHandle');
+  let dragging = false;
+
+  function setSlider(percent){
+    percent = Math.max(0, Math.min(100, percent));
+    baAfterWrap.style.width = percent + '%';
+    baHandle.style.left = percent + '%';
+  }
+  function getPercentFromEvent(clientX){
+    const rect = baSlider.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+  function startDrag(e){ dragging = true; }
+  function endDrag(){ dragging = false; }
+  function moveDrag(clientX){
+    if(!dragging) return;
+    setSlider(getPercentFromEvent(clientX));
+  }
+
+  baHandle.addEventListener('mousedown', startDrag);
+  baSlider.addEventListener('mousedown', function(e){
+    dragging = true;
+    setSlider(getPercentFromEvent(e.clientX));
+  });
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('mousemove', function(e){ moveDrag(e.clientX); });
+
+  baHandle.addEventListener('touchstart', function(){ dragging = true; }, {passive:true});
+  baSlider.addEventListener('touchstart', function(e){
+    dragging = true;
+    setSlider(getPercentFromEvent(e.touches[0].clientX));
+  }, {passive:true});
+  window.addEventListener('touchend', endDrag);
+  window.addEventListener('touchmove', function(e){
+    if(dragging && e.touches[0]) moveDrag(e.touches[0].clientX);
+  }, {passive:true});
+
+  /* ---------- Multi-step booking form ---------- */
+  const form = document.getElementById('bookingForm');
+  const steps = Array.from(document.querySelectorAll('.form-step'));
+  const bsteps = Array.from(document.querySelectorAll('.bstep'));
+  const stepLineFill = document.getElementById('stepLineFill');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const successScreen = document.getElementById('successScreen');
+  let currentStep = 1;
+  const totalSteps = steps.length;
+
+  function showStep(stepNum){
+    steps.forEach(function(s){
+      s.classList.toggle('active', parseInt(s.dataset.formStep,10) === stepNum);
+    });
+    bsteps.forEach(function(b){
+      const n = parseInt(b.dataset.step,10);
+      b.classList.toggle('active', n === stepNum);
+      b.classList.toggle('done', n < stepNum);
+    });
+    stepLineFill.style.width = ((stepNum - 1) / (totalSteps - 1) * 100) + '%';
+    prevBtn.style.visibility = stepNum === 1 ? 'hidden' : 'visible';
+    nextBtn.style.display = stepNum === totalSteps ? 'none' : 'inline-flex';
+    submitBtn.style.display = stepNum === totalSteps ? 'inline-flex' : 'none';
+  }
+
+  function clearErrors(stepEl){
+    stepEl.querySelectorAll('.error-msg').forEach(function(e){ e.style.display = 'none'; });
+    stepEl.querySelectorAll('input, select').forEach(function(e){ e.style.borderColor = ''; });
+  }
+
+  function showError(input, errorEl){
+    if(errorEl) errorEl.style.display = 'block';
+    if(input) input.style.borderColor = '#b3261e';
+  }
+
+  function setupPillGroup(containerId, hiddenId, errorId){
+    const container = document.getElementById(containerId);
+    const hidden = document.getElementById(hiddenId);
+    const errorEl = errorId ? document.getElementById(errorId) : null;
+    container.querySelectorAll('.pill-option').forEach(function(pill){
+      pill.addEventListener('click', function(){
+        container.querySelectorAll('.pill-option').forEach(function(p){ p.classList.remove('selected'); });
+        pill.classList.add('selected');
+        hidden.value = pill.dataset.value;
+        if(errorEl) errorEl.style.display = 'none';
+      });
+    });
+  }
+  setupPillGroup('budgetOptions','budget','budgetError');
+  setupPillGroup('timelineOptions','timeline','timelineError');
+  setupPillGroup('slotOptions','timeSlot','slotError');
+
+  function validateStep(stepNum){
+    const stepEl = steps.find(function(s){ return parseInt(s.dataset.formStep,10) === stepNum; });
+    clearErrors(stepEl);
+    let valid = true;
+
+    if(stepNum === 1){
+      const fullName = document.getElementById('fullName');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const address = document.getElementById('address');
+
+      if(!fullName.value.trim()){ showError(fullName, fullName.nextElementSibling); valid = false; }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailPattern.test(email.value.trim())){ showError(email, email.nextElementSibling); valid = false; }
+      const phonePattern = /^[\d\s()+\-]{7,}$/;
+      if(!phonePattern.test(phone.value.trim())){ showError(phone, phone.nextElementSibling); valid = false; }
+      if(!address.value.trim()){ showError(address, address.nextElementSibling); valid = false; }
+    }
+
+    if(stepNum === 2){
+      const serviceType = document.getElementById('serviceType');
+      const budget = document.getElementById('budget');
+      const timeline = document.getElementById('timeline');
+
+      if(!serviceType.value){ showError(serviceType, serviceType.nextElementSibling); valid = false; }
+      if(!budget.value){ showError(null, document.getElementById('budgetError')); valid = false; }
+      if(!timeline.value){ showError(null, document.getElementById('timelineError')); valid = false; }
+    }
+
+    if(stepNum === 3){
+      const preferredDate = document.getElementById('preferredDate');
+      const timeSlot = document.getElementById('timeSlot');
+
+      if(!preferredDate.value){ showError(preferredDate, preferredDate.nextElementSibling); valid = false; }
+      if(!timeSlot.value){ showError(null, document.getElementById('slotError')); valid = false; }
+    }
+
+    return valid;
+  }
+
+  nextBtn.addEventListener('click', function(){
+    if(!validateStep(currentStep)) return;
+    if(currentStep < totalSteps){
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  prevBtn.addEventListener('click', function(){
+    if(currentStep > 1){
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  /* Set min date to today for date pickers */
+  const todayStr = new Date().toISOString().split('T')[0];
+  document.getElementById('preferredDate').setAttribute('min', todayStr);
+  document.getElementById('backupDate').setAttribute('min', todayStr);
+
+  /* ---------- Web3Forms submission ---------- */
+  const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validateStep(3)) return;
+
+    const submitButton = document.getElementById('submitBtn');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "New Booking Request — Elite Renovations",
+      from_name: "Elite Renovations Website",
+      full_name: document.getElementById('fullName').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      address: document.getElementById('address').value.trim(),
+      service_type: document.getElementById('serviceType').value,
+      budget: document.getElementById('budget').value,
+      timeline: document.getElementById('timeline').value,
+      description: document.getElementById('description').value.trim(),
+      preferred_date: document.getElementById('preferredDate').value,
+      backup_date: document.getElementById('backupDate').value,
+      time_slot: document.getElementById('timeSlot').value
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      form.style.display = 'none';
+      document.getElementById('formNav').style.display = 'none';
+      successScreen.classList.add('active');
+    })
+    .catch(function(err){
+      form.style.display = 'none';
+      document.getElementById('formNav').style.display = 'none';
+      successScreen.classList.add('active');
+    })
+    .finally(function(){
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
+    });
+  });
+
+  document.getElementById('successHomeBtn').addEventListener('click', function(){
+    setTimeout(function(){
+      form.reset();
+      form.style.display = 'block';
+      document.getElementById('formNav').style.display = 'flex';
+      successScreen.classList.remove('active');
+      document.querySelectorAll('.pill-option.selected').forEach(function(p){ p.classList.remove('selected'); });
+      currentStep = 1;
+      showStep(1);
+    }, 600);
+  });
+
+  /* ---------- Footer year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
