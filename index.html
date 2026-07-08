@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Renovations | Toronto Kitchen &amp; Bathroom Renovations</title>
-<meta name="description" content="Elite Renovations — premium kitchen and bathroom renovations across the Greater Toronto Area. 250+ projects, 12 years of craftsmanship, 4.9 star rating.">
+<title>Beyond Rhare Construction & Renovation | Toronto Kitchen &amp; Bathroom Renovations</title>
+<meta name="description" content="Beyond Rhare Construction & Renovation — premium kitchen and bathroom renovations across the Greater Toronto Area. 250+ projects, 12 years of craftsmanship, 4.9 star rating.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,6 +65,10 @@
     letter-spacing:.5px;display:flex;align-items:center;gap:8px;
   }
   .logo span{color:var(--green);}
+  .logo img{height:52px;width:auto;display:block;}
+  @media(max-width:640px){
+    .logo img{height:40px;}
+  }
   .nav-links{display:flex;gap:36px;align-items:center;}
   .nav-links a{
     font-size:.95rem;font-weight:500;color:var(--ink);position:relative;padding:4px 0;
@@ -432,7 +436,7 @@
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="#home" class="logo">Elite <span>Renovations</span></a>
+    <a href="#home" class="logo"><img src="logo.png" alt="Beyond Rhare Construction & Renovation"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -605,7 +609,7 @@
   <div class="container about-grid">
     <div class="about-img-wrap reveal">
       <div class="about-img">
-        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Marco D'Angelo, owner of Elite Renovations">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Marco D'Angelo, owner of Beyond Rhare Construction & Renovation">
       </div>
       <div class="about-badge">
         <div class="num">12+</div>
@@ -615,7 +619,7 @@
     <div class="about reveal">
       <div class="role">Meet the Owner</div>
       <h2>Marco D'Angelo</h2>
-      <p>Marco founded Elite Renovations over 12 years ago with a simple belief: renovations should be stress-free and the results should last a lifetime. Born and raised in Toronto, Marco trained as a carpenter before building Elite Renovations into one of the GTA's most trusted kitchen and bathroom renovation studios.</p>
+      <p>Marco founded Beyond Rhare Construction & Renovation over 12 years ago with a simple belief: renovations should be stress-free and the results should last a lifetime. Born and raised in Toronto, Marco trained as a carpenter before building Beyond Rhare Construction & Renovation into one of the GTA's most trusted kitchen and bathroom renovation studios.</p>
       <p>Today, Marco personally oversees every project's design phase, ensuring each home gets the same hands-on attention his very first client received — from a downtown condo refresh to full custom builds in Forest Hill.</p>
       <ul class="about-list">
         <li><span class="check">✓</span> Licensed &amp; Fully Insured</li>
@@ -647,7 +651,7 @@
       </div>
       <div class="review-card stagger-item" style="--i:1">
         <div class="stars">★★★★★</div>
-        <p class="quote">"We interviewed five contractors before choosing Elite Renovations, and it was the right call. The attention to detail in our bathroom remodel exceeded expectations."</p>
+        <p class="quote">"We interviewed five contractors before choosing Beyond Rhare Construction & Renovation, and it was the right call. The attention to detail in our bathroom remodel exceeded expectations."</p>
         <div class="review-person">
           <div class="review-avatar">J</div>
           <div><div class="review-name">James Okafor</div><div class="review-meta">Bathroom Renovation · North York</div></div>
@@ -797,7 +801,7 @@
         <div class="success-screen" id="successScreen">
           <div class="success-icon">✓</div>
           <h3>Request Received!</h3>
-          <p>Thank you for reaching out to Elite Renovations. Marco and the team will review your project details and contact you within one business day to confirm your consultation.</p>
+          <p>Thank you for reaching out to Beyond Rhare Construction & Renovation. Marco and the team will review your project details and contact you within one business day to confirm your consultation.</p>
           <a href="#home" class="btn btn-primary" id="successHomeBtn">Back to Home</a>
         </div>
       </div>
@@ -810,7 +814,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="footer-logo">Elite <span>Renovations</span></div>
+        <div class="footer-logo">Beyond <span>Rhare</span></div>
         <p>Premium kitchen and bathroom renovations across Toronto and the Greater Toronto Area. Licensed, insured, and locally owned.</p>
         <div class="footer-social">
           <a href="#" aria-label="Instagram">IG</a>
@@ -841,12 +845,12 @@
         <ul class="footer-contact">
           <li><span class="ic">📍</span> Toronto, Ontario — Serving the GTA</li>
           <li><span class="ic">📞</span> (416) 555-0192</li>
-          <li><span class="ic">✉</span> hello@eliterenovations.ca</li>
+          <li><span class="ic">✉</span> hello@beyondrhare.ca</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© <span id="year"></span> Elite Renovations. All rights reserved.</div>
+      <div>© <span id="year"></span> Beyond Rhare Construction & Renovation. All rights reserved.</div>
       <div><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></div>
     </div>
   </div>
@@ -1104,8 +1108,8 @@
 
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
-      subject: "New Booking Request — Elite Renovations",
-      from_name: "Elite Renovations Website",
+      subject: "New Booking Request — Beyond Rhare Construction & Renovation",
+      from_name: "Beyond Rhare Construction & Renovation Website",
       full_name: document.getElementById('fullName').value.trim(),
       email: document.getElementById('email').value.trim(),
       phone: document.getElementById('phone').value.trim(),
